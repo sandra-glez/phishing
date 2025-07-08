@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso estudiante</title>
+    <link rel="icon" href="logoTheBridge.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login-header">
+        <span class="icon">&#128274;</span>
+        <span class="title">Acceso estudiante</span>
+    </div>
+    <hr />
+    <div class="login-content">
+        <div class="login-image">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Laptop" />
+        </div>
+        <form class="login-form" id="loginForm">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+            <label for="password">Contraseña</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password" required />
+                <span class="toggle-password">&#128065;</span>
+            </div>
+            <button type="submit" class="login-btn">Ingresar</button>
+            <div id="errorMessage" class="error-message"></div>
+            <div class="divider">
+                <span>O continúa con:</span>
+            </div>
+            <button type="button" class="google-btn" id="googleBtn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" /> Google
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const togglePassword = document.querySelector('.toggle-password');
+    const passwordInput = document.getElementById('password');
+    togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.style.color = type === 'text' ? '#e53935' : '#888';
+    });
+
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorMessage.textContent = "Esta cuenta no existe, inicia sesión con Google.";
+    });
+    const googleBtn = document.getElementById('googleBtn');
+    googleBtn.addEventListener('click', function () {
+        window.location.href = 'google.html';
+    });
+</script>
+</body>
+</html>

